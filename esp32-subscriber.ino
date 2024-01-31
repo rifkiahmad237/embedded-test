@@ -1,7 +1,6 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 #include <ArduinoJson.h>
-#define led1 19
 const char *ssid = "";
 const char *password = "";
 const char *mqtt_server = "broker.hivemq.com";
@@ -35,7 +34,6 @@ void setup()
   mqtt.setServer(mqtt_server, mqtt_port);
   mqtt.setCallback(callback);
   delay(100);
-  digitalWrite(led1, LOW);
 }
 
 void callback(char *topic, byte *msg, unsigned int msgLength)
